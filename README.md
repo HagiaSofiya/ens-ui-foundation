@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# ENS UI 
+**Please make sure you have MetaMask enabled and set to Goerli before starting server.**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+#### `yarn add`
+Installs dependencies
+#### `yarn start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Libraries and Packages
+- **[Create React App](https://github.com/facebook/create-react-app)**
+- **[Ethers.js](https://docs.ethers.io/v5/)**
+- **[GraphQL](https://www.npmjs.com/package/graphql)**
+- **[Apollo Boost](https://www.npmjs.com/package/apollo-boost)**
+- **[Apollo Boost](https://www.npmjs.com/package/@apollo/react-hooks)**
+- **[React Appollo Hooks](https://www.npmjs.com/package/apollo-boost)**
+- **[SCSS](https://www.npmjs.com/package/node-sass)**: To replace writing straight css.
 
-### `yarn test`
+## ENS Subgraph Issue
+I was limited with what data that I got back from the subgraph. There were no clear connections between domain names and blocks.  The best I could do was filter by TTL. Sorting only the returned data added the complexity of storing in the state again. If I had more time, I would integrate a context or try to find a better solution. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## UI Notes 
+- **CSS**: To conserve time and focus on readability, I opted to write my own css instead of using a framework. I chose scss for convenience but I didn’t utilize the most of it’s functionality.  All css is written in alphabetic order for readability.
+- **Modal**: I added a button to show a modal since I also did the contract variant.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Further Enhancements
+- **Ethereum Provider**: Add functionality to check if user has wallet and if user is on Goerli network.  Use provider and chain id to create a series of screens directing the user to take proper action
+- **Typescript**: Adding Typescript
+- **Styled Components**: Refactor to use Styled Components
+- **Modal Transition**: Add modal transitions for UI
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Misc Notes 
+The code base can be abstracted into more partials and certain functions can be rewritten to be more deterministic. However, I chose to keep it compact for this project to ease readability, not over engineer.
